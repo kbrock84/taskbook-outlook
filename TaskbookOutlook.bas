@@ -2,7 +2,6 @@ Attribute VB_Name = "TaskbookOutlook"
 Sub SendTask(boardName As String, text As String)
     Dim command As String
     command = "tb.cmd -t " + "@" + boardName + " """ + text + """"
-    MsgBox "$:" & command
     Shell (command)
 End Sub
 
@@ -35,8 +34,4 @@ Sub CreateTask()
     currentText = regExp.Replace(Replace(bodyText, vbLf, " "), "::END SECTION::")
     
     Call SendTask(GetBoardName(), currentText)
-End Sub
-
-Sub TestTask()
-CreateTask
 End Sub
