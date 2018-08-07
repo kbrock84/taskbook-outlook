@@ -21,7 +21,7 @@ Sub CreateTask()
     Dim currentText As String
     Dim regExp As New regExp
     
-    Dim pattern As String: pattern = "From:.*<([a-zA-Z0-9_\-\.]+)@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})>.*"
+    Dim pattern As String: pattern = "((From:\s?)?\s?<(mailto:)?([a-zA-Z0-9_\-\.]+)@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3}).*)|(From:.*)"
     Dim bodyText As String: bodyText = GetCurrentText()
     
     With regExp
